@@ -1,0 +1,76 @@
+body {
+  justify-content: center;
+  background-color: rgb(159, 173, 169);
+}
+.Heading_icon {
+  text-align: center;
+}
+.firms {
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+.lawyer {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 2em !important;
+}
+.lawyer-name {
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  margin-left: 3em !important;
+}
+.MuiPaper-root.MuiDialog-paper {
+  min-width: 300px;
+  width: 300px;
+}
+.time-slot {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.time {
+  background-color: rgb(209, 224, 209);
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.time-selected {
+  background-color: aqua;
+}
+.lawyerData {
+  display: flex !important;
+  flex-direction: column !important;
+}
+/* .lawyerDetail ~ span {
+  width: 50px;
+} */
+.lawyerDetail {
+  background-color: rgb(209, 224, 209);
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+.firmsName {
+  background-color: rgb(119, 194, 119);
+  padding: 10px;
+  border-radius: 10px;
+}
+.close-modal {
+  position: absolute !important;
+  right: 12px;
+  top: 10px;
+}
+.time_slot {
+  padding: 5px;
+}
+.appointment-time {
+  display: flex;
+  flex-direction: column;
+}
+.lawyer-span {
+  margin-left: 5px;
+}

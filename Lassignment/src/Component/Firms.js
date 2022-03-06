@@ -1,6 +1,5 @@
 import { Button, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import "../App.css";
 import Appointment from "./Appointment.js";
 import { useSelector } from "react-redux";
@@ -8,11 +7,10 @@ import LawyerData from "./LawyerData";
 import Header from "./Header";
 
 const Firms = () => {
-  const Id = useParams("id");
   const [show, setShow] = useState(false);
   const [showData, setShowData] = useState(false);
   const [lawyerId, setLawyerId] = useState("");
-  const { firmData, successMsg, errorMsg } = useSelector((state) => state.firm);
+  const { firmData } = useSelector((state) => state.firm);
 
   useEffect(() => {
     childToRender();
@@ -43,6 +41,7 @@ const Firms = () => {
                   background: "aliceblue",
                   cursor: "pointer",
                 }}
+                key={index}
                 onClick={() => openLawyerData(lawyerData.lawyers[item].lId)}
               >
                 {lawyerData.lawyers[item].name}

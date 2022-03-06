@@ -3,7 +3,6 @@ import { BOOK_SLOT, ERROR_MSG, SUCCESS_MSG } from "./FirmActionType";
 
 export const bookSlot = (name, lawyerId) => {
   return (dispatch, getState) => {
-    console.log(name, lawyerId);
     let tmpState = getState().firm.firmData;
     let timeSlot = [];
     let count = 0;

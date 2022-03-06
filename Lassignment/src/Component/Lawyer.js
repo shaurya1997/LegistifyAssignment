@@ -1,5 +1,4 @@
-import react from "react";
-import { Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import Header from "./Header";
 

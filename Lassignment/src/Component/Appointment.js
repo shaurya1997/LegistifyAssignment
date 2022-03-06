@@ -1,20 +1,16 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Grid, IconButton } from "@mui/material";
 import { Close as CloseIcon } from "@material-ui/icons";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DateTimePicker from "@mui/lab/DateTimePicker";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { bookSlot } from "../Redux/Action/FirmAction";
 
 export default function Appointment({ show, setShow, lawyerId }) {
-  const [value, setValue] = React.useState();
+  const [value, setValue] = React.useState("");
   const firmData = useSelector((state) => state.firm);
 
   const dispatch = useDispatch();
@@ -38,11 +34,12 @@ export default function Appointment({ show, setShow, lawyerId }) {
 
   let rendarTime = timeSlot && (
     <Grid container className="time-slot">
-      {timeSlot[0].map((item) => {
+      {timeSlot[0].map((item, index) => {
         return (
           <Grid
             className={`${value == item.time ? "time-selected" : ""} time`}
             onClick={() => handleClick(item.time)}
+            key={index}
           >
             {item.time}
           </Grid>
@@ -69,6 +66,7 @@ export default function Appointment({ show, setShow, lawyerId }) {
             variant="contained"
             className="btn_save"
             onClick={handleSumbit}
+            disabled={value == ""}
           >
             Submit
           </Button>

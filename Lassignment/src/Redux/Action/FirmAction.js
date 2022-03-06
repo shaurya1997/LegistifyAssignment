@@ -11,23 +11,28 @@ export const bookSlot = (name, lawyerId) => {
         timeSlot = item.timeSlot;
       }
     });
+
     timeSlot.map((item) => {
       if (!item.isavailable) {
         count++;
       }
-      if (count == timeSlot.length) {
-        displayError("Appointments not available”", "danger");
-        return;
-      }
+    });
+    if (count == timeSlot.length) {
+      displayError("Appointments not available”", "danger");
+      return null;
+    }
+    timeSlot.map((item) => {
       if (name == item.time) {
         if (!item.isavailable) {
           dispatch({ type: SUCCESS_MSG, msg: "" });
           dispatch({ type: ERROR_MSG, msg: "This slot is already book" });
           displayError("This slot is already book", "danger");
+          console.log("second");
         } else {
           dispatch({ type: ERROR_MSG, msg: "" });
           dispatch({ type: BOOK_SLOT, name, lawyerId });
           dispatch({ type: SUCCESS_MSG, msg: "Slot Booked" });
+
           displaySuccess("Slot Booked", "success");
         }
       }
